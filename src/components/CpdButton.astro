@@ -1,0 +1,41 @@
+---
+export interface Props {
+  heading: string;
+  point1: string;
+  point2: string;
+  point3: string;
+}
+const { heading, point1, point2, point3 } = Astro.props;
+import dropdownIcon from '../assets/images/dropdown.svg';
+---
+<div class="flex flex-col gap-4">
+    
+</div>
+<button type="button" class="js-accordion-toggle text-left flex items-center pb-4 justify-between w-full text-left px-3 py-3 border-2-voilet-400 rounded-md bg-[var(--light-violet)]">
+    <span class="ml-2">{heading}</span>
+    <img src={dropdownIcon.src} alt="" class="w-5 h-5 shrink-0">
+</button>
+<div class="content pb-4 m-4" style="display: none;">
+    <ul class="list-disc list-inside">
+        <li>{point1}</li>
+        <li>{point2}</li>
+        <li>{point3}</li>
+    </ul>
+</div>
+
+<script>
+    var coll = document.getElementsByClassName("js-accordion-toggle");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+        content.style.display = "none";
+        } else {
+        content.style.display = "block";
+        }
+    });
+    }
+</script>

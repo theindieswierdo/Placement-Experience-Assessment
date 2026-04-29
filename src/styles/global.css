@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+:root {
+    --sand:    #DDD8B8;
+    --sage:    #ecf8ec;
+    --slate:   #84A9C0;
+    --iris:    #928fbb;
+    --plum:    #542E71;
+
+    /* Derived tokens */
+    --bg:      #F7F5EE;          /* near-white warm off-white */
+    --surface: #FFFFFF;
+    --text:    #1C1A2A;
+    --muted:   #7A7891;
+    --rule:    #DDD8B8;
+
+    --light-violet: #b3b3ff;
+
+    /* Type */
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+}

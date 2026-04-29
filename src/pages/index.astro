@@ -1,0 +1,211 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CollButton from '../components/CollapseButton.astro';
+import ContentSection from '../components/Section.astro';
+import CollapseButton from '../components/CollapseButton.astro';
+import CpdButton from '../components/CpdButton.astro';
+
+import b_sound from '../assets/sound/sectionb.mp3';
+import c_sound from '../assets/sound/sectionc.mp3';
+import skills_sound from '../assets/sound/skillssection.mp3';
+import d_sound from '../assets/sound/sectionDtoE.mp3';
+import f_sound from '../assets/sound/sectionf.mp3';
+---
+
+<Layout title="NAT-30010 | Placement Reflection — Amante">
+
+  <section>
+    <p class="text-xl">NAT-30010 · Work Placement Year · Assessment 2</p>
+
+    <h1 class="text-4xl font-bold">
+      A Year in
+      <strong>Outreach.</strong>
+    </h1>
+    <hr class="my-4 border-t-2 border-black-300" />
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg m-4">
+      <div class="flex flex-col">
+        <span>Student No</span>
+        <span class="text-sm">23017013</span>
+      </div>
+      <div class="flex flex-col">
+        <span>Placement role</span>
+        <span class="text-sm">Student Recruitment &amp; Outreach Assistant</span>
+      </div>
+      <div class="flex flex-col">
+        <span>Organisation</span>
+        <span class="text-sm">Keele University</span>
+      </div>
+      <div class="flex flex-col">
+        <span>Duration</span>
+        <span class="text-sm">2025 to 2026</span>
+      </div>
+    </div>
+  </section>
+  <div class="p-4 mb-8 border-2 border-black-300 bg-[var(--iris)]">
+    <h1 class="text-2xl">Introduction</h1>
+    <p>
+      Greetings everyone👋 My name is Amante, a Computer Science student here at Keele, sharing my work placement experience with you.
+      This past year I've been on a Work Placement Year as a Student Recruitment and Outreach Assistant - essentially someone whose job is travelling to schools and colleges across the country, spreading the word about university, that it’s an option young people can undertake when planning their future. In this presentation, I’ll be taking you through my placement - the highlights, the challenges, and the things I genuinely wish someone had told me before I started. I'll also share how my skills developed in ways I didn't always expect, and where I see myself going next.
+      Hopefully by the end of this, you'll have a clearer picture of what a placement year can actually do for you - not just on paper, but for who you become. So let’s get started.
+    </p>
+  </div>
+  
+  <!-- ─────────────────────────────────────────
+       SECTION B — WHY PLACEMENT / WHY THIS ROLE
+       Assessment criterion (a)
+  ────────────────────────────────────────── -->
+  <ContentSection id="why" title="Why did I choose this placement?" soundfile={b_sound}>
+    <p>The main reasons i chose a placement was because: </p>
+    <ul class=" p-4 mb-4 list-decimal gap-4">
+      <!--reason 1 -->
+      <li class="mb-4">
+        <h3 class="text-xl">Imposter syndrome & self-doubt</h3>
+        <p>Considered a placement from the start but doubted my ability to get one — compounded by being an international student unfamiliar with the UK professional landscape.</p>
+      </li>
+      <!--reason 2 -->
+      <li class="mb-4">
+        <h3 class="text-xl">The role matched a neglected passion</h3>
+         <p>It tapped into my love of knowledge and its power to impact others — something my course didn't always make room for.<p/>
+      </li>
+      <!--reason 3 -->
+      <li class="mb-4">
+        <h3 class="text-xl">Personal resonance</h3>
+          <p>I was once that student — uncertain, under-informed, without role models who looked like me. This role let me be that for someone else.<p/>
+      </li>
+      <!--reason 4 -->
+      <li class="mb-4">
+        <h3 class="text-xl">Deliberately not a traditional tech placement</h3>
+          <p>Chose a role that asked something different of me — one that challenged me beyond the expected path for my degree. <p/>
+      </li>
+    </ul>
+   
+  </ContentSection>
+
+  <!-- ─────────────────────────────────────────
+       SECTION C — THE ROLE & ACTIVITIES
+       Assessment criterion (b)
+  ────────────────────────────────────────── -->
+  <ContentSection id="role" title="What do I actually do?" soundfile={c_sound}>
+    <p class="mb-4">Things I do:</p>
+    <ul class="flex flex-col list-disc list-inside gap-4">
+      <li>Travelling to schools and colleges</li>
+      <li>Delivering presentations about university life and higher education pathways</li>
+      <li>Representing Keele to students aged 14 to 18 which could be small fairs to large scale ones like UCAS </li>
+    </ul>
+  </ContentSection>
+  <!-- ─────────────────────────────────────────
+       SECTION C — SKILLS DEVELOPMENT & ILOs
+       Assessment criterion (c)
+  ────────────────────────────────────────── -->
+  <ContentSection id="skills" title="How I developed — skills, behaviours & ILOs." soundfile={skills_sound}> 
+       <!-- ILO 1 -->
+      <div>ILO 1 — Public Speaking &amp; Technical Communication</div>
+      <p class="italic">
+        “I will deliver three structured presentations at student recruitment events, communicating information clearly and engaging confidently with audience questions.” 
+      </p>
+      <!-- ILO 2 -->
+      <div>ILO 2 — Sector Knowledge &amp; Educational Awareness</div>
+      <p class="italic">
+        “I will summarise key differences between UK post-16 pathways (A-levels, BTEC, Apprenticeships) after completing five school visits, enabling me to provide 
+        accurate and informed guidance to students.” 
+      </p>
+      <!-- ILO 3 -->
+      <div class="italic">ILO 3 — Project &amp; Event Management</div>
+      <p>
+        “I will organise administrative and planning tasks for at least two student recruitment events, including scheduling, resource preparation, and coordination with colleagues. ” 
+      </p>
+  </ContentSection>
+  <!-- ─────────────────────────────────────────
+       SECTION D — UNINTENDED LEARNING
+       Part of criterion (c)
+  ────────────────────────────────────────── -->
+  <ContentSection id="advice" title="What I didn't expect to learn." soundfile={d_sound}>
+    <h2 class="text-xl">Unexpected things I learnt throughout the placement were:</h2>
+    <ul>
+      <div class="gap-4 ">
+        <li>&rarr; To be more meticulous</li>
+        <li>&rarr; Being more conscious of my health</li>
+        <li>&rarr; Trusting my own judgement </li>
+      </div>
+    </ul>
+    <h2 class="text-xl">Things I would tell my past self before starting the placement</h2>
+    <ul>
+      <li>&rarr; A job teaches what a degree <strong>can't</strong></li>
+      <li>&rarr; Your real self is <strong>and</strong> can be your professional self </li>
+      <li>&rarr; Mistakes are okay, <strong>hiding</strong> them isn't </li>
+      <li>&rarr; Your energy is a <strong>resource</strong></li>
+    </ul>
+  </ContentSection>
+  
+<!-- ─────────────────────────────────────────
+       SECTION F — CPD ACTION PLAN
+       Assessment criterion (e)
+  ────────────────────────────────────────── -->
+  <ContentSection id="cpd" title="Where I'm going — my CPD plan." soundfile={f_sound}>
+    <p class="m-2">
+      Overall my<strong> Continuous Professional Development plan</strong> 
+      is focused on building on the skills and experiences I gained during my placement, while also exploring new areas that align with my future career aspirations. Here are the key components of my plan:
+    </p>
+    
+    <ul class="p-4 mb-4">
+      <div class="flex flex-col gap-4">
+        <CpdButton heading="Understanding educational systems and policy"
+          point1="How policy shapes student access to education, especially around technology"
+          point2="How tech policy can support or hinder learning"
+          point3="Links to my upcoming dissertation proposal"/>
+        <CpdButton heading="Technology as a tool for educational communication"
+          point1="Build projects at the intersection of tech and education"
+          point2="Explore tools that communicate information better to students, parents, schools"
+          point3="Develop further on what I started with previous projects/experience"/>
+        <CpdButton heading="Professionalism as a practised habit"
+          point1="Many students only learn professionalism after entering the workplace"
+          point2="Having a goal to pracitce personal reviewing for every output before it's sent, avoiding the 'send and forget' mentality"
+          point3="Treat professionalism as a consistent standard, not a one-time threshold"/>
+      </div>
+    </ul>
+  </ContentSection>
+
+  <!-- ─────────────────────────────────────────
+       REFERENCES
+  ────────────────────────────────────────── -->
+  <hr class="my-4 border-t-2 border-black-300" />
+  <section id="references" class="section" data-accent="sand">
+    <div class="section-inner">
+      <span class="section-label text-2xl">References</span>
+      <h2 class="section-heading" style="font-size: clamp(1.4rem, 3vw, 2rem);">
+        Literature &amp; sources
+      </h2>
+
+      <ul class="list-none flex flex-col gap-4 w-3/4">
+        <li>
+          Dewey, J. (1938). Experience and education. Macmillan.
+        </li>
+        <li>
+          Kolb, D. A. (2013). The process of experiential learning. In Culture and processes of adult learning (pp. 138-156). Routledge.
+        </li>
+        <li>
+          Schirf, E., & Serapiglia, A. (2017). Identifying the real technology skills gap: A qualitative look across disciplines. Information Systems Education Journal, 15(6), 72–82.
+          The Decision Lab. (n.d.). Somatic marker hypothesis. 
+          <a class="underline hover:text-purple-800" href="https://thedecisionlab.com/reference-guide/psychology/somatic-marker-hypothesis">Have a read</a>
+        </li>
+        <li>
+          Big Think. (n.d.). Somatic markers. 
+          <a class="underline hover:text-purple-800" href="https://bigthink.com/business/somatic-markers/">Have a read</a> 
+        </li>
+        <li>
+          Zull, J. E. (2004). The art of changing the brain. Educational Leadership, 62(1), 68–72.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────
+       AI USE ACKNOWLEDGEMENT
+  ────────────────────────────────────────── -->
+  <section id="ai-acknowledgement" class="section" data-accent="sand">
+    <div class="section-inner">
+      <span class="section-label">AI Use Acknowledgement</span>
+      <div class="placeholder">GenAI acknowledgement statement goes here</div>
+    </div>
+  </section>
+</Layout>

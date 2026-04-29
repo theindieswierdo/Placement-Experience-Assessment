@@ -1,0 +1,16 @@
+---
+export interface Props {
+  heading: string;
+  content: string;
+}
+const { heading, content } = Astro.props;
+import dropdownIcon from '../assets/images/dropdown.svg';
+---
+
+<button type="button" class="js-accordion-toggle text-left flex items-center justify-between w-full px-3 py-3 rounded-md bg-[var(--light-violet)]">
+    <span class="ml-2">{heading}</span>
+    <img src={dropdownIcon.src} alt="" class="w-5 h-5 shrink-0">
+</button>
+<div class="content pb-4" style="display: none;">
+    <p>{content}</p>
+</div>

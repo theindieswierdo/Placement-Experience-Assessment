@@ -1,0 +1,36 @@
+---
+interface Props {
+  title?: string;
+}
+const { title = "NAT-30010 | Placement Reflection" } = Astro.props;
+import "../styles/global.css";
+import NavBar from "../components/NavBar.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body class="flex flex-col bg-[var(--sage)] min-h-screen font-(family-name:--font-display)">
+    <!-- Navigation -->
+     <NavBar links={[
+      { title: "Why", url: "#why" },
+      { title: "Role", url: "#role" },
+      { title: "Skills", url: "#skills" },
+      { title: "Advice", url: "#advice" },
+      { title: "CPD", url: "#cpd" },
+    ]} />
+
+    <main class="flex-1 container mx-auto px-6 py-8">
+      <slot />
+    </main>
+
+    <footer class="bg-[var(--surface)] text-center p-4 text-sm">
+      <span>NAT-30010 Work Placement Year</span>
+      <span>Keele University · 2025–26</span>
+    </footer>
+  </body>
+</html>
