@@ -1,16 +1,24 @@
 ---
+//components
 import Layout from '../layouts/Layout.astro';
 import CollButton from '../components/CollapseButton.astro';
 import ContentSection from '../components/Section.astro';
 import CollapseButton from '../components/CollapseButton.astro';
 import CpdButton from '../components/CpdButton.astro';
-
+//sounds
 import b_sound from '../assets/sound/sectionb.mp3';
 import c_sound from '../assets/sound/sectionc.mp3';
 import skills_sound from '../assets/sound/skillssection.mp3';
 import d_sound from '../assets/sound/sectionDtoE.mp3';
 import f_sound from '../assets/sound/sectionf.mp3';
+//images
+import stand from '../assets/images/stand.jpg';
+import why from '../assets/images/why.png';
+import role from '../assets/images/what-i-do.jpg';
+import relfection from '../assets/images/reflection.png';
+
 ---
+
 
 <Layout title="NAT-30010 | Placement Reflection — Amante">
 
@@ -41,13 +49,18 @@ import f_sound from '../assets/sound/sectionf.mp3';
       </div>
     </div>
   </section>
-  <div class="p-4 mb-8 border-2 border-black-300 bg-[var(--iris)]">
-    <h1 class="text-2xl">Introduction</h1>
-    <p>
-      Greetings everyone👋 My name is Amante, a Computer Science student here at Keele, sharing my work placement experience with you.
-      This past year I've been on a Work Placement Year as a Student Recruitment and Outreach Assistant - essentially someone whose job is travelling to schools and colleges across the country, spreading the word about university, that it’s an option young people can undertake when planning their future. In this presentation, I’ll be taking you through my placement - the highlights, the challenges, and the things I genuinely wish someone had told me before I started. I'll also share how my skills developed in ways I didn't always expect, and where I see myself going next.
-      Hopefully by the end of this, you'll have a clearer picture of what a placement year can actually do for you - not just on paper, but for who you become. So let’s get started.
-    </p>
+  <div class="flex flex-row gap-4 p-4 mb-8 border-2 border-black-300 bg-[var(--iris)] ">
+    <div class="w-2/3 flex flex-col gap-4">
+      <h1 class="text-2xl">Introduction</h1>
+      <p>
+          Greetings reader👋 My name is Amante, a Computer Science student here at Keele, sharing my work placement experience with you.
+          This past year I've been on a Work Placement Year as a Student Recruitment and Outreach Assistant - essentially someone whose job is travelling to schools and colleges across the country, spreading the word about university, that it’s an option young people can undertake when planning their future. In this presentation, I’ll be taking you through my placement - the highlights, the challenges, and the things I genuinely wish someone had told me before I started. I'll also share how my skills developed in ways I didn't always expect, and where I see myself going next.
+          Hopefully by the end of this, you'll have a clearer picture of what a placement year can actually do for you - not just on paper, but for who you become. So let’s get started.
+      </p>
+    </div>
+    <div class="w-1/3">
+      <img src={stand.src} alt="two banners and a stand at a student recruitment event" class="rounded-md"/>
+    </div>
   </div>
   
   <!-- ─────────────────────────────────────────
@@ -55,30 +68,32 @@ import f_sound from '../assets/sound/sectionf.mp3';
        Assessment criterion (a)
   ────────────────────────────────────────── -->
   <ContentSection id="why" title="Why did I choose this placement?" soundfile={b_sound}>
-    <p>The main reasons i chose a placement was because: </p>
-    <ul class=" p-4 mb-4 list-decimal gap-4">
-      <!--reason 1 -->
-      <li class="mb-4">
-        <h3 class="text-xl">Imposter syndrome & self-doubt</h3>
-        <p>Considered a placement from the start but doubted my ability to get one — compounded by being an international student unfamiliar with the UK professional landscape.</p>
-      </li>
-      <!--reason 2 -->
-      <li class="mb-4">
-        <h3 class="text-xl">The role matched a neglected passion</h3>
-         <p>It tapped into my love of knowledge and its power to impact others — something my course didn't always make room for.<p/>
-      </li>
-      <!--reason 3 -->
-      <li class="mb-4">
-        <h3 class="text-xl">Personal resonance</h3>
-          <p>I was once that student — uncertain, under-informed, without role models who looked like me. This role let me be that for someone else.<p/>
-      </li>
-      <!--reason 4 -->
-      <li class="mb-4">
-        <h3 class="text-xl">Deliberately not a traditional tech placement</h3>
-          <p>Chose a role that asked something different of me — one that challenged me beyond the expected path for my degree. <p/>
-      </li>
-    </ul>
-   
+    <div class="flex flex-col md:flex-row gap-4">
+      <div class="w-full md:w-2/3">
+        <p>The main reasons i chose a placement was because: </p>
+        <ul class="p-4 mb-4 list-decimal gap-4">
+          <li class="mb-4">
+            <h3 class="text-xl">Imposter syndrome & self-doubt</h3>
+            <p>Considered a placement from the start but doubted my ability to get one — compounded by being an international student unfamiliar with the UK professional landscape.</p>
+          </li>
+          <li class="mb-4">
+            <h3 class="text-xl">The role matched a neglected passion</h3>
+            <p>It tapped into my love of knowledge and its power to impact others — something my course didn't always make room for.</p>
+          </li>
+          <li class="mb-4">
+            <h3 class="text-xl">Personal resonance</h3>
+            <p>I was once that student — uncertain, under-informed, without role models who looked like me. This role let me be that for someone else.</p>
+          </li>
+          <li class="mb-4">
+            <h3 class="text-xl">Deliberately not a traditional tech placement</h3>
+            <p>Chose a role that asked something different of me — one that challenged me beyond the expected path for my degree.</p>
+          </li>
+        </ul>
+      </div>
+      <div class="w-full md:w-1/3">
+        <img src={why.src} alt="" class="rounded-md p-4 w-full h-full object-cover"/>
+      </div>
+    </div>
   </ContentSection>
 
   <!-- ─────────────────────────────────────────
@@ -86,12 +101,20 @@ import f_sound from '../assets/sound/sectionf.mp3';
        Assessment criterion (b)
   ────────────────────────────────────────── -->
   <ContentSection id="role" title="What do I actually do?" soundfile={c_sound}>
-    <p class="mb-4">Things I do:</p>
-    <ul class="flex flex-col list-disc list-inside gap-4">
-      <li>Travelling to schools and colleges</li>
-      <li>Delivering presentations about university life and higher education pathways</li>
-      <li>Representing Keele to students aged 14 to 18 which could be small fairs to large scale ones like UCAS </li>
-    </ul>
+    <div class="flex flex-col md:flex-row gap-4">
+      <div class="w-full md:w-1/2">
+        <p class="mb-4">Things I do:</p>
+        <ul class="flex flex-col list-disc list-outside pl-6 gap-4">
+          <li>Travelling to schools and colleges</li>
+          <li>Delivering presentations about university life and higher education pathways</li>
+          <li>Representing Keele to students aged 14 to 18 which could be small fairs to large scale ones like UCAS </li>
+        </ul>
+      </div>
+      <div class="w-full md:w-1/3">
+        <img src={role.src} alt="me talking to students at a student recruitment event" class="rounded-md mt-4"/>
+        <a class="underline hover:text-purple-800" href="https://www.instagram.com/reel/DXZrRNHEixL/?igsh=dncxNXgyaWVjc3l4">@Wolverhampton Grammar School</a>
+      </div>
+    </div>
   </ContentSection>
   <!-- ─────────────────────────────────────────
        SECTION C — SKILLS DEVELOPMENT & ILOs
@@ -99,42 +122,53 @@ import f_sound from '../assets/sound/sectionf.mp3';
   ────────────────────────────────────────── -->
   <ContentSection id="skills" title="How I developed — skills, behaviours & ILOs." soundfile={skills_sound}> 
        <!-- ILO 1 -->
-      <div>ILO 1 — Public Speaking &amp; Technical Communication</div>
-      <p class="italic">
-        “I will deliver three structured presentations at student recruitment events, communicating information clearly and engaging confidently with audience questions.” 
-      </p>
+      <div class="border-2 border-black-300 shadow-md p-4 mb-4 bg-[var(--slate)]">
+        <div>ILO 1 — Public Speaking &amp; Technical Communication</div>
+        <p class="italic">
+          “I will deliver three structured presentations at student recruitment events, communicating information clearly and engaging confidently with audience questions.”
+        </p>
+      </div>
       <!-- ILO 2 -->
-      <div>ILO 2 — Sector Knowledge &amp; Educational Awareness</div>
-      <p class="italic">
-        “I will summarise key differences between UK post-16 pathways (A-levels, BTEC, Apprenticeships) after completing five school visits, enabling me to provide 
-        accurate and informed guidance to students.” 
-      </p>
+      <div class="border-2 border-black-300 shadow-md p-4 mb-4 bg-[var(--slate)]">
+        <div>ILO 2 — Sector Knowledge &amp; Educational Awareness</div>
+        <p class="italic">
+          “I will summarise key differences between UK post-16 pathways (A-levels, BTEC, Apprenticeships) after completing five school visits, enabling me to provide
+          accurate and informed guidance to students.”
+        </p>
+      </div>
       <!-- ILO 3 -->
-      <div class="italic">ILO 3 — Project &amp; Event Management</div>
-      <p>
-        “I will organise administrative and planning tasks for at least two student recruitment events, including scheduling, resource preparation, and coordination with colleagues. ” 
-      </p>
+      <div class="border-2 border-black-300 shadow-md p-4 mb-4 bg-[var(--slate)]">
+        <div class="italic">ILO 3 — Project &amp; Event Management</div>
+        <p>
+          “I will organise administrative and planning tasks for at least two student recruitment events, including scheduling, resource preparation, and coordination with colleagues. ”
+        </p>
+      </div>
   </ContentSection>
   <!-- ─────────────────────────────────────────
        SECTION D — UNINTENDED LEARNING
        Part of criterion (c)
   ────────────────────────────────────────── -->
   <ContentSection id="advice" title="What I didn't expect to learn." soundfile={d_sound}>
-    <h2 class="text-xl">Unexpected things I learnt throughout the placement were:</h2>
-    <ul>
-      <div class="gap-4 ">
-        <li>&rarr; To be more meticulous</li>
-        <li>&rarr; Being more conscious of my health</li>
-        <li>&rarr; Trusting my own judgement </li>
+    <div class="flex flex-col md:flex-row gap-4">
+      <div class="w-full md:w-2/3 flex flex-col gap-4">
+        <h2 class="text-xl">Unexpected things I learnt throughout the placement were:</h2>
+        <ul class="list-outside list-disc pl-6">
+          <li>To be more meticulous</li>
+          <li>Being more conscious of my health</li>
+          <li>Trusting my own judgement</li>
+        </ul>
+        <h2 class="text-xl">Things I would tell my past self before starting the placement</h2>
+        <ul class="list-outside list-disc pl-6">
+          <li>A job teaches what a degree <strong>can't</strong></li>
+          <li>Your real self is <strong>and</strong> can be your professional self</li>
+          <li>Mistakes are okay, <strong>hiding</strong> them isn't</li>
+          <li>Your energy is a <strong>resource</strong></li>
+        </ul>
       </div>
-    </ul>
-    <h2 class="text-xl">Things I would tell my past self before starting the placement</h2>
-    <ul>
-      <li>&rarr; A job teaches what a degree <strong>can't</strong></li>
-      <li>&rarr; Your real self is <strong>and</strong> can be your professional self </li>
-      <li>&rarr; Mistakes are okay, <strong>hiding</strong> them isn't </li>
-      <li>&rarr; Your energy is a <strong>resource</strong></li>
-    </ul>
+      <div class="w-full md:w-1/3">
+        <img src={relfection.src} alt="" class="rounded-md p-4 w-full h-full object-cover"/>
+      </div>
+    </div>
   </ContentSection>
   
 <!-- ─────────────────────────────────────────
@@ -169,7 +203,7 @@ import f_sound from '../assets/sound/sectionf.mp3';
        REFERENCES
   ────────────────────────────────────────── -->
   <hr class="my-4 border-t-2 border-black-300" />
-  <section id="references" class="section" data-accent="sand">
+  <section id="references" class="section">
     <div class="section-inner">
       <span class="section-label text-2xl">References</span>
       <h2 class="section-heading" style="font-size: clamp(1.4rem, 3vw, 2rem);">
@@ -195,6 +229,12 @@ import f_sound from '../assets/sound/sectionf.mp3';
         <li>
           Zull, J. E. (2004). The art of changing the brain. Educational Leadership, 62(1), 68–72.
         </li>
+        <li>
+          Stock images sourced from <a class="underline hover:text-purple-800" href="https://www.istockphoto.com/">iStock</a> by Getty Images, used for illustrative purposes.
+        </li>
+        <li>
+          Anthropic. (2026). Claude (claude-sonnet-4-6) [Large language model]. <a class="underline hover:text-purple-800" href="https://claude.ai">https://claude.ai</a>
+        </li>
       </ul>
     </div>
   </section>
@@ -202,10 +242,10 @@ import f_sound from '../assets/sound/sectionf.mp3';
   <!-- ─────────────────────────────────────────
        AI USE ACKNOWLEDGEMENT
   ────────────────────────────────────────── -->
-  <section id="ai-acknowledgement" class="section" data-accent="sand">
-    <div class="section-inner">
-      <span class="section-label">AI Use Acknowledgement</span>
-      <div class="placeholder">GenAI acknowledgement statement goes here</div>
+  <section id="ai-acknowledgement" class="section bg-[var(--light-violet)] mt-8">
+    <div class="section-inner p-4">
+        <h2 class="text-xl">Generative AI Declaration</h2>
+      <div class="placeholder">I acknowledge the use of Claude (Anthropic, https://claude.ai/) to proofread my work to provide feedback, assist with code debugging and reformatting during the development of my website. All written reflections, examples, CPD goals and academic content are of my own.</div>
     </div>
   </section>
 </Layout>

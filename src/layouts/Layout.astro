@@ -8,7 +8,7 @@ import NavBar from "../components/NavBar.astro";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth;">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,11 +17,11 @@ import NavBar from "../components/NavBar.astro";
   <body class="flex flex-col bg-[var(--sage)] min-h-screen font-(family-name:--font-display)">
     <!-- Navigation -->
      <NavBar links={[
-      { title: "Why", url: "#why" },
       { title: "Role", url: "#role" },
       { title: "Skills", url: "#skills" },
       { title: "Advice", url: "#advice" },
       { title: "CPD", url: "#cpd" },
+      { title: "References", url: "#references" },
     ]} />
 
     <main class="flex-1 container mx-auto px-6 py-8">
